@@ -1,0 +1,131 @@
+.light {
+    padding: 0px 300px 0px 300px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.light .lightHeader {
+    padding: 0 5px;
+    margin-top: 30px;
+    font-weight: 700;
+}
+
+.lightDescribe {
+    padding: 0px 300px 10px 300px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.lightDescribe .describe {
+    padding-right: 5px;
+    min-height: 500px;
+}
+
+.lightDescribe .describe .serviceList {
+    list-style: none;
+}
+
+.lightDescribe .describe .serviceList li {
+    text-align: right;
+    width: 100%;
+    margin-bottom: 15px;
+}
+
+.lightDescribe .describe .serviceList .textHead {
+    display: inline-block;
+    width: 100%;
+    color: #137878;
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 23px;
+}
+
+.lightDescribe .describe .serviceList .textParagrap {
+    color: #5d5d5d;
+    line-height: 25px;
+    font-size: 16px;
+    margin: 5px 0;
+}
+
+.lightDescribe .serviceReq {
+    padding: 30px 0;
+}
+
+.lightDescribe .serviceReq .tabLink {
+    background-color: #f5f5f5;
+    color: teal;
+    padding: 14px 16px;
+    font-size: 17px;
+    border: 1px solid #eee;
+    border-radius: 0 !important;
+}
+
+.lightDescribe .serviceReq .nav-item .active {
+    border-bottom: 0px !important;
+    background-color: rgb(254, 254, 254) !important;
+    border-top: 2px solid #2b3e4b !important;
+    color: #2b3e4b;
+    font-weight: 700;
+}
+
+.lightDescribe .serviceReq .required .bi {
+    margin-left: 5px;
+    font-size: 20px;
+    position: relative;
+    top: 2px;
+}
+
+.lightDescribe .serviceReq .tabBody .tabcontent {
+    /* height: 570px; */
+    overflow-y: scroll;
+    width: 100%;
+    color: teal;
+    padding: 10px;
+    border: 1px solid #eee;
+    box-shadow: 0px 1px 5px 1px rgba(150, 150, 150, .3);
+}
+
+.lightDescribe .serviceReq .tabBody .tabList ul {
+    padding-right: 25px;
+    list-style: none;
+}
+
+.lightDescribe .serviceReq .tabBody .tabList ul li {
+    display: inline-block;
+    width: 100%;
+    color: #5d5d5d;
+    font-size: 16px;
+    line-height: 28px;
+}
+
+.lightDescribe .serviceReq .tabBody .tabList .paragrph {
+    white-space: break-spaces !important;
+}
+
+.lightDescribe .serviceReq .tabBody .tabList .textInfo {
+    color: #A6A6A6 !important;
+}
+
+@media (max-width: 576px) {
+
+    .light {
+        padding: 0px 10px 0px 10px;
+    }
+
+    .lightDescribe {
+        padding: 0px 10px 0px 10px;
+    }
+
+    .lightDescribe .serviceReq .required .nav {
+        display: flex;
+    }
+
+    .lightDescribe .serviceReq .required .nav li {
+        width: 50%;
+    }
+
+    .lightDescribe .serviceReq .tabLink {
+        width: 100%;
+        height: 100%;
+    }
+}

@@ -1,0 +1,127 @@
+.services {
+    padding-top: 0;
+    padding-bottom: 0;
+    background-color: var(--global--color-white);
+}
+
+.services .serviceHeader {
+    background-image: url(../../Assets/6.jpg);
+    display: flex;
+    align-items: center;
+    height: 160px;
+    position: relative;
+    overflow: hidden;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    width: 100%;
+}
+
+.services .serviceHeader .serviceTitle .title {
+    margin-bottom: 24px;
+    font-size: 40px;
+    font-weight: 700;
+    color: #fff;
+    line-height: 75px;
+    text-align: right;
+    text-transform: capitalize;
+}
+
+html[dir="ltr"] .services .serviceHeader .serviceTitle .title {
+    margin-bottom: 24px;
+    font-size: 40px;
+    font-weight: 700;
+    color: #fff;
+    line-height: 75px;
+    text-align: left;
+    text-transform: capitalize;
+}
+
+.services .breadcrumbSubTitle {
+    height: 60px;
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid #eaeaea;
+}
+
+.services .breadcrumbSubTitle .breadcrumb {
+    display: flex;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 14px;
+    align-items: center;
+    margin: 0;
+}
+
+.services .breadcrumbSubTitle .breadcrumb .breadcrumb-item+.breadcrumb-item::before {
+    float: none !important;
+}
+
+.services .breadcrumbSubTitle .breadcrumb a {
+    text-decoration: none !important;
+    color: rgb(37, 55, 69);
+}
+
+.serviceBody {
+    padding-top: 20px;
+    padding-bottom: 20px;
+    background-color: #fff;
+    min-height: 500px;
+}
+
+.serviceBody .ServiceCard {
+    display: flex;
+    gap: 20px;
+}
+
+@media (max-width: 576px) {
+    .serviceBody .ServiceCard {
+        justify-content: center;
+        display: flex;
+        flex-direction: column;
+    }
+}
+
+.serviceBody .card {
+    width: 300px;
+}
+
+@media (max-width: 576px) {
+    .serviceBody .card {
+        width: auto;
+    }
+}
+
+.serviceBody .card i {
+    display: flex;
+    justify-content: center;
+    font-size: 60px;
+    padding: 10px;
+}
+
+.serviceBody .card i:hover {
+    transform: translateY(-5px);
+}
+
+.serviceBody .card .card-body .card-title {
+    text-align: center;
+    color: #253745;
+    font-size: 18px;
+    font-weight: 700;
+}
+
+.serviceBody .card .card-body .cardActions {
+    display: flex;
+    justify-content: space-between;
+    gap: 5px;
+}
+
+.serviceBody .card .card-body .cardActions .btn {
+    background-color: #253745;
+    color: #fff;
+    width: 50%;
+}
+
+.serviceBody .card .card-body .btn:hover {
+    background-color: #b59354;
+}

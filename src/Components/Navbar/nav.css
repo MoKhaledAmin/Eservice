@@ -1,0 +1,387 @@
+.topNav {
+  padding: 0 20px;
+  display: flex;
+  justify-content: space-between;
+  height: 50px;
+  position: relative;
+  background-color: #2b3e4b;
+}
+
+.topNav .leftBlock {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.topNav .leftBlock .headline {
+  display: flex;
+  align-items: center;
+  line-height: 21px;
+  color: #b59354;
+  margin-bottom: 0;
+  text-transform: capitalize;
+}
+
+.logOut {
+  cursor: pointer;
+}
+
+.topNav .leftBlock .headline a {
+  font-size: 13px;
+  color: #fff;
+  text-transform: capitalize;
+  margin-left: 10px;
+  transition: 0.3s ease-in-out;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.topNav .leftBlock .headline i {
+  font-size: 10px;
+}
+
+.topNav .leftBlock .headline a:hover {
+  color: #b59354;
+}
+
+.navParent .topNav .leftBlock .mainMenuItem {
+  position: relative;
+}
+
+.topNav .leftBlock .mainMenuItem .side-menu {
+  position: absolute;
+  background-color: #fff;
+  border-radius: 0 0 8px 8px;
+  opacity: 0;
+  visibility: hidden;
+  z-index: 999 !important;
+  transition: all 300ms linear;
+  width: 235px;
+  padding: 10px 40px 25px;
+  box-shadow: 0 5px 41.5px rgba(40, 40, 40, 0.11);
+  text-align: right;
+  transform: translateY(15px);
+}
+
+.topNav .leftBlock .mainMenuItem:hover .side-menu {
+  opacity: 1;
+  visibility: visible;
+  display: block;
+}
+
+.topNav .leftBlock .mainMenuItem .side-menu a {
+  padding: 10px 0 9px 0;
+  display: flex;
+  justify-content: space-between;
+  font-size: 14px;
+  color: #9b9b9b;
+  transition: all 300ms ease-in-out;
+  text-transform: capitalize;
+  border-radius: 0;
+  border-bottom: 1px solid #eaeaea;
+  position: relative;
+}
+
+.topNav .leftBlock .mainMenuItem .side-menu a:hover {
+  color: #b59354;
+}
+
+.sub-menu .mainMenuItem:hover .bi-arrow-left-short::before {
+  opacity: 1;
+  transform: rotate(180deg);
+  font-size: 22px;
+}
+
+.topNav .rightBlock {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 3px;
+}
+
+.topNav .rightBlock .UserName h6 {
+  color: #fff;
+  font-size: 20px;
+  font-weight: bold;
+  margin: 0;
+}
+
+.topNav .rightBlock .changeLanguage .btn {
+  font-size: 13px;
+  gap: 4px;
+  margin-bottom: 0;
+  color: #fff;
+  text-transform: capitalize;
+  display: flex;
+  align-items: center;
+  box-shadow: none;
+  border: none;
+  outline: none;
+}
+
+.topNav .rightBlock .changeLanguage .btn:hover {
+  color: #b59354;
+}
+
+.topNav .rightBlock .changeLanguage .btn:focus {
+  box-shadow: none;
+  border: none;
+  outline: none;
+}
+
+.topNav .rightBlock .changeLanguage i {
+  font-size: 20px;
+  color: #b59354;
+}
+
+.downNav {
+  box-shadow: 0 5px 41.5px rgba(9, 29, 62, 0.11);
+  padding: 5px 300px 5px 300px;
+  display: flex;
+  justify-content: space-between;
+  position: sticky;
+  z-index: 1;
+  top: 0;
+  background-color: #fff;
+  margin-bottom: 0;
+}
+
+@media (min-width: 577px) {
+  .downNav  {
+    padding: 5px 300px 5px 300px;
+  }
+}
+
+@media (max-width: 576px) {
+  html[dir="ltr"] .downNav .navbarIamge {
+    padding: 0;
+    margin-left: 0px;
+    margin-right: 220px;
+;
+  }
+}
+
+@media (max-width: 576px) {
+  .downNav .navbarIamge {
+    margin-left: 220px;
+  }
+}
+
+.downNav .navbarIamge .navImg {
+  width: 80px;
+}
+
+.downNav .middleDashboard {
+  display: flex;
+  justify-content: center;
+  gap: 25px;
+}
+
+.downNav .downNavMenu .downNavMenu {
+  position: relative;
+}
+
+.downNav .downNavMenu .side-menu {
+  position: absolute;
+  background-color: #fff;
+  border-radius: 0 0 8px 8px;
+  opacity: 0;
+  visibility: hidden;
+  z-index: 999 !important;
+  transition: all 300ms linear;
+  padding: 10px 40px 25px;
+  box-shadow: 0 5px 41.5px rgba(40, 40, 40, 0.11);
+  text-align: right;
+  transform: translateY(30px);
+}
+
+.downNav .downNavMenu a {
+  text-decoration: none !important;
+  color: #253745;
+  font-size: 15px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.downNav .downNavMenu .navLink {
+  padding: 22px 0;
+}
+
+.downNav .downNavMenu a:hover {
+  color: #b59354;
+}
+
+.downNav .downNavMenu:hover .side-menu {
+  opacity: 1;
+  visibility: visible;
+}
+
+.downNav .downNavMenu .side-menu a {
+  padding: 10px 0 9px 0;
+  display: flex;
+  justify-content: space-between;
+  font-size: 14px;
+  color: #253745;
+  transition: all 300ms ease-in-out;
+  text-transform: capitalize;
+  border-radius: 0;
+  border-bottom: 1px solid #eaeaea;
+  position: relative;
+  text-decoration: none !important;
+}
+
+.downNav .downNavMenu .side-menu a:hover {
+  color: #b59354;
+}
+
+.bi-arrow-left-short::before {
+  opacity: 0;
+  transition: 0.3s ease-in-out;
+  transform: rotate(-180deg);
+}
+
+.sub-menu .nav-item.downNavMenu:hover .bi-arrow-left-short::before {
+  opacity: 1;
+  transform: rotate(180deg);
+  font-size: 22px;
+}
+
+.downNav .headerSearchAndSetting {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+  gap: 6px;
+}
+
+.downNav .headerSearchAndSetting .searhBar input {
+  font-size: 13px;
+  border-radius: 20px;
+  border: none !important;
+  outline: none !important;
+  padding: 8px 20px 8px 40px;
+  background-color: #f3f3f9;
+}
+
+.downNav .headerSearchAndSetting .searhBar .searchBtn {
+  top: 50%;
+  left: 0px;
+  font-size: 22px;
+  position: absolute;
+  transform: translateY(-50%);
+  border: none;
+}
+
+html[dir="ltr"] .downNav .headerSearchAndSetting .searhBar .searchBtn {
+  left: 2px;
+}
+
+.downNav .headerSearchAndSetting .searhBar .searchBtn i {
+  font-size: 16px;
+  color: #74788d;
+}
+
+.downNav .headerSearchAndSetting .searhBar .searchBtn:focus {
+  outline: none;
+  box-shadow: none;
+  border: none;
+}
+
+.downNav .menu .navbar-toggler {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 30px;
+  height: 30px;
+  transition: 0.3s ease-in-out;
+  border: 0;
+  padding: 0;
+  outline: 0;
+  cursor: pointer;
+  border-radius: 0;
+  color: black;
+}
+
+.downNav .menu .navbar-toggler:focus {
+  text-decoration: none;
+  outline: 0;
+  border: none;
+  box-shadow: none;
+}
+
+.downNav .dropDown.navbar-collapse {
+  border-top: 1px solid #eaeaea;
+  background-color: #ffffff;
+  padding: 20px 35px;
+  position: absolute;
+  left: 0;
+  top: 84px;
+  width: 100%;
+}
+
+.downNav .dropDown .dropdown-toggle {
+  text-decoration: none !important;
+  color: #253745;
+  font-size: 15px;
+  font-weight: 700;
+  line-height: 36px;
+  display: flex !important;
+  justify-content: space-between;
+}
+
+.downNav .dropDown .dropdown-toggle:hover {
+  color: #b59354;
+}
+
+.downNav .dropDown .subDropdown:not(:last-child) {
+  border-bottom: 1px solid #eaeaea;
+}
+
+.downNav .dropDown .subContent {
+  padding: 10px 20px;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 26px;
+  text-decoration: none !important;
+  display: flex;
+  justify-content: space-between;
+  color: #9b9b9b;
+  text-transform: capitalize;
+}
+
+.downNav .dropDown .subContent:hover {
+  color: #b59354;
+}
+
+.downNav .dropDown .dropdown-toggle::after {
+  display: none !important;
+
+}
+
+@media only screen and (min-width: 992px) {
+  .downNav .dropDown.navbar-collapse {
+    display: none !important;
+  }
+}
+
+@media only screen and (max-width: 990px) {
+  .downNav .menu {
+    display: flex !important;
+  }
+}
+
+@media only screen and (max-width: 990px) {
+  .downNav .headerSearchAndSetting .searhBar,
+  .middleDashboard {
+    display: none !important;
+  }
+}
+
+@media only screen and (max-width: 576px) {
+  .topNav .leftBlock {
+    gap: 3px;
+  }
+  .downNav {
+    padding: 5px 0px 5px 5px;
+  }
+}

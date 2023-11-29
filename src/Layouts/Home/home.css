@@ -1,0 +1,16 @@
+.carousel-indicators {
+    right: 95px !important;
+}
+
+html[dir="ltr"] .carousel-indicators {
+    left: 95px !important;
+}
+
+@media (max-width: 576px) {
+    html[dir="ltr"] .carousel-indicators {
+        left: 25px !important;
+    }
+    .carousel-indicators {
+        right: 12px !important;
+    }
+}

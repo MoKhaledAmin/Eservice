@@ -1,0 +1,35 @@
+.dataTable {
+    margin: 40px 0 0;
+    padding: 10px 300px 10px 300px;
+    min-height: 500px;
+}
+
+@media (max-width: 576px) {
+    .dataTable {
+        padding: 10px 10px;
+    }
+}
+
+.dataTable .paginate {
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+}
+
+.dataTable .paginate .page-link {
+    border: none;
+    border-radius: 30px !important;
+    margin: 0 3px !important;
+    color: #74788d;
+    font-size: 13px;
+    font-weight: 400;
+}
+
+.dataTable .paginate .page-link:focus {
+    box-shadow: none !important;
+    outline: none !important;
+}
+
+.dataTable .paginate .active button {
+    color: #fff;
+}

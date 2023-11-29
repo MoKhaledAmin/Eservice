@@ -1,0 +1,38 @@
+/* Variables */
+:root {
+  --main-color: #1f2a40;
+  --text-color: #1F2A40;
+  --font-size: 18px;
+  --font-family: "Cairo";
+}
+
+@font-face {
+  font-family: "Cairo";
+  src: url("../src/Assets/Fonts/Cairo-Regular.ttf"), url("../src/Assets/Fonts/Cairo-Bold.ttf"),
+    url("../src/Assets/Fonts/Cairo-Black.ttf"), url("../src/Assets/Fonts/Cairo-ExtraBold.ttf"),
+    url("../src/Assets/Fonts/Cairo-ExtraLight.ttf"), url("../src/Assets/Fonts/Cairo-Light.ttf"),
+    url("../src/Assets/Fonts/Cairo-Medium.ttf"), url("../src/Assets/Fonts/Cairo-SemiBold.ttf");
+}
+
+/* Global Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  font-size: var(--font-size) !important;
+  font-family: var(--font-family) !important;
+  color: var(--text-color) !important;
+  background-color: fff !important;
+}
+
+btn:hover {
+  background-color: #B68A35 !important;
+  color: #fff !important;
+}
