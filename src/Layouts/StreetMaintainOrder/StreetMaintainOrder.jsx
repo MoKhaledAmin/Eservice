@@ -3,22 +3,23 @@ import React, { useEffect, useState, useRef } from "react";
 // translation
 import { useTranslation } from 'react-i18next';
 
-import { GetDistric, GetPlan, GetStreet, DisplayAttachedSlice, SubmitInfo, InsertAttach, UploadAttach, GetClient } from "../../Services/MasterStore/Reducers/StartSlice";
+import { GetDistric, GetPlan, GetStreet, DisplayAttachedSlice, UploadAttach, GetClient } from "../../Services/MasterStore/Reducers/StartSlice";
+import { SubmitStreetInfo , InsertAttachment } from "../../Services/MasterStore/Reducers/StartStreetMaintainSlice";
 
 // Master Hooks
 import { useAppDispatch, useAppSelector } from "../../Services/MasterStore/MasterHook";
 import { useForm } from "react-hook-form";
 
 import MapContainer from './Map';
-import { ErrorMessage } from "@hookform/error-message"
+import { ErrorMessage } from "@hookform/error-message"  
 
 // React Router
 import { useParams, useNavigate } from 'react-router-dom';
 
 // Styles
-import "./LightingOrder.css";
+import "./StreetMaintainOrder.css";
 
-const LightingOrder = () => {
+const StreetMaintainOrder = () => {
     const { t } = useTranslation();
     const Navigate = useNavigate();
     const previewRef = useRef(null);
@@ -50,23 +51,27 @@ const LightingOrder = () => {
         return chr4() + chr4() + '-' + chr4() + '-' + chr4() + '-' + chr4() + '-' + chr4() + chr4() + chr4();
     }
     const onSubmit = (data) => {
-        dispatch(SubmitInfo({ ...data, LONGITUDE: localStorage.getItem('longitude'), LATITUDE: localStorage.getItem('latitude') })).then((res) => {
+        dispatch(SubmitStreetInfo({ ...data, LONGITUDE: localStorage.getItem('longitude'), LATITUDE: localStorage.getItem('latitude') })).then((res) => {
+
             const formData = new FormData();
             for (let index = 0; index < AttachmentData.length; index++) {
                 let ImageGuidName = AttachmentData && uniqueID() + '.' + AttachmentData[index].file.type.split("/")[1];
                 formData.append("file", AttachmentData[index].file);
                 formData.append("FilePath", ImageGuidName);
+                console.log(AttachmentData[index].file);
                 const Data = {
                     DISPLAY_NAME: AttachmentData[index].file.name,
                     EXTENSION_NAME: AttachmentData[index].file.type?.split("/")[1],
                     NAME: AttachmentData[index].file.name,
                     FILESIZE: AttachmentData[index].file.size,
-                    LIGHTING_ID: res.payload.DATA.DLIGHTING_ID
+                    STREET_MAINTENANT_ID: res.payload.DATA.DSTREET_MAINTENANT_ID
                 }
-                dispatch(InsertAttach(Data));
+                console.log(Data);
+                console.log(res.payload);
+                dispatch(InsertAttachment(Data));
                 dispatch(UploadAttach(formData));
             }
-            if ((res.payload.MESSAGE?.CODE === null || res.payload.MESSAGE?.CODE === "") && res.payload.DATA !== null) {
+            if ((res.payload.MESSAGE?.CODE === null || res.payload.MESSAGE?.CODE === "" ) && res.payload.DATA !== null) {
                 Navigate(`/ShowRequest`, { replace: true })
             } else {
                 setMessageError(res.payload.MESSAGE.MESSAGE)
@@ -91,7 +96,7 @@ const LightingOrder = () => {
 
     return (
         <React.Fragment>
-            <div className="lightOrder">
+            <div className="StreetMaintainOrder">
                 <div className="formCard">
                     <div className="cardHeader">
                         <div className="cardTitle">
@@ -137,11 +142,6 @@ const LightingOrder = () => {
                                                 ))
                                             }
                                         </select>
-                                    </div>
-                                    <div className="formSelectList col-md-3">
-                                        <label className="form-label">{t('BlockNumber')}</label>
-                                        <input type="number" className="form-control" {...submitInfo("PARCEL_NO", { required: "حقل مطلوب" })} name='PARCEL_NO' />
-                                        <small><ErrorMessage errors={errors} name="PARCEL_NO" /></small>
                                     </div>
                                     <div className="formSelectList col-md-3">
                                         <label htmlFor="designNumber">{t('PlanNumber')}</label>
@@ -193,4 +193,4 @@ const LightingOrder = () => {
     )
 }
 
-export default LightingOrder;
+export default StreetMaintainOrder;

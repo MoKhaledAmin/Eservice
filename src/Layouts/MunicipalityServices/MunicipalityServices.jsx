@@ -28,9 +28,9 @@ const MunicipalityServices = () => {
         dispatch(GetNservice({}));
     }, [dispatch])
 
-    const CheckLogin = (id) => {
+    const CheckLogin = (id,page) => {
         if(decodedToken){
-            Navigate(`/LightingOrder/${id}`, { replace: true })
+            Navigate(`/${page}/${id}`, { replace: true })
         }else{
             Navigate(`/Login`, { replace: true })
         }
@@ -69,14 +69,14 @@ const MunicipalityServices = () => {
                         <div className='ServiceCard'>
                             {state && state.map((Item, Index) => (
                             <div className="card" key={Index}>
-                                <i className="bi bi-lightbulb"></i>
+                                <i className={`${Item.ICON ? Item.ICON : "bi bi-lightbulb" }`}></i>
                                 <div className="card-body">
                                     <h5 className="card-title">{localStorage.getItem('lang') === 'en' ? Item?.NAME_TWO : Item.NAME_ONE}</h5>
                                     <div className='cardActions'>
                                         <NavLink to={`/Lighting/${Item.NSERVICE_ID}`} className={"btn"}>
                                            {t('Details')}
                                         </NavLink>
-                                        <button className="btn" onClick={() => {CheckLogin(Item.NSERVICE_ID)}}>{t('StartService')}</button>
+                                        <button className="btn" onClick={() => {CheckLogin(Item.NSERVICE_ID,Item.PAGE_NAME)}}>{t('StartService')}</button>
                                     </div>
                                 </div>
                             </div>

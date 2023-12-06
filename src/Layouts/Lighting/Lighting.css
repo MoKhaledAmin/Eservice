@@ -2,12 +2,24 @@
     padding: 0px 300px 0px 300px;
     margin-left: auto;
     margin-right: auto;
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
 }
 
 .light .lightHeader {
     padding: 0 5px;
     margin-top: 30px;
     font-weight: 700;
+}
+
+.light .StartBtn {
+    background-color: #253745;
+    color: #fff;
+}
+
+.light .StartBtn:hover {
+    background-color: #b59354;
 }
 
 .lightDescribe {

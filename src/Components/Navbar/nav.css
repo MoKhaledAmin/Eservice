@@ -1,5 +1,5 @@
 .topNav {
-  padding: 0 20px;
+  padding: 0 10px;
   display: flex;
   justify-content: space-between;
   height: 50px;
@@ -199,7 +199,7 @@
 .downNav .downNavMenu a {
   text-decoration: none !important;
   color: #253745;
-  font-size: 15px;
+  font-size: 18px;
   font-weight: 700;
   cursor: pointer;
 }
@@ -221,7 +221,7 @@
   padding: 10px 0 9px 0;
   display: flex;
   justify-content: space-between;
-  font-size: 14px;
+  font-size: 13px;
   color: #253745;
   transition: all 300ms ease-in-out;
   text-transform: capitalize;

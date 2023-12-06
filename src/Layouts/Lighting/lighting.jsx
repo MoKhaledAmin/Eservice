@@ -8,32 +8,44 @@ import { useTranslation } from 'react-i18next';
 // Master Hooks
 import { useAppDispatch, useAppSelector } from "../../Services/MasterStore/MasterHook";
 
+// React Router
+import { useNavigate , useParams } from 'react-router-dom';
+import {jwtDecode} from "jwt-decode";
+
 // css
 import "./Lighting.css"
 
 const Lighting = () => {
     const { t } = useTranslation();
     const dispatch = useAppDispatch();
+    const Navigate = useNavigate();
+    const { id } = useParams();
 
     useEffect(() => {
-        dispatch(PrcServiceDetail({NSERVICE_ID: 1}));
-    }, [dispatch])
+        dispatch(PrcServiceDetail({NSERVICE_ID: id}));
+    }, [dispatch, id])
 
+    const decodedToken = localStorage.getItem('token') && jwtDecode(localStorage.getItem('token'));
     const state = useAppSelector((state)=> state?.Order?.order);
+
+    
+    console.log(state);
+    const CheckLogin = (id) => {
+        if(decodedToken){
+            Navigate(`/${state?.REF_DESCRIPTION && state?.REF_DESCRIPTION[0]?.PAGE_NAME}/${id}`, { replace: true })
+        }else{
+            Navigate(`/Login`, { replace: true })
+        }
+    }
 
     return (
         <React.Fragment>
             <div className='light'>
-                <h3 className='lightHeader'>{t('StreetLight')}</h3>
+                <h3 className='lightHeader'>{state?.REF_DESCRIPTION && state?.REF_DESCRIPTION[0]?.NAME_ONE}</h3>
+                <button className="btn StartBtn" onClick={()=> {CheckLogin(id)}}>{t('StartService')}</button>
             </div>
             <div className='lightDescribe'>
                 <div className='describe'>
-                    <ul className='serviceList'>
-                        {/* <li>
-                            <b className='textHead'>وصف الخدمة</b>
-                            <p className='textParagrap'>تقوم إدارة تنفيذ مشاريع الإنارة والميكانيكا بتنفيذ الطلبات الواردة إليها من المواطنين والجهات المختلفة. ويتم تنفيذ الأعمال واعتماد التنفيذ والاستلام طبقاً لإجراءات عمل محددة تبدأ من تقديم الطلب وتنتهي بتفيذ الخدمة وإخطار المستفيد بإنتهاء الطلب.</p>
-                        </li> */}
-                    </ul>
                     <div className='serviceReq'>
                         <div className='required'>
                             <ul className="nav nav-tabs" id="myTab" role="tablist">

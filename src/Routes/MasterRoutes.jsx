@@ -11,6 +11,7 @@ const Lighting = lazy(() => import('../Layouts/Lighting/lighting'));
 const Login = lazy(() => import('../Layouts/Login/Login'));
 const LightingOrder = lazy(() => import('../Layouts/LightingOrder/LightingOrder'));
 const ShowRequest = lazy(() => import('../Layouts/ShowRequest/ShowRequest'));
+const StreetMaintainOrder = lazy(() => import('../Layouts/StreetMaintainOrder/StreetMaintainOrder'));
 
 const MasterRoutes  = () => {
 
@@ -25,6 +26,7 @@ const MasterRoutes  = () => {
                 { path: '/Login', element: <Login /> },
                 { path: '/LightingOrder/:id', element: <LightingOrder /> },
                 { path: '/ShowRequest', element: <ShowRequest /> },
+                { path: '/StreetMaintainOrder/:id', element: <StreetMaintainOrder /> },
             ]
         }
     ])

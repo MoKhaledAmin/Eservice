@@ -101,12 +101,7 @@ const ShowRequest = () => {
                         </thead>
                         <tbody>
                             {
-                                SaleTabel && SaleTabel ? <tr>
-                                    <td>Empty</td>
-                                    <td>Empty</td>
-                                    <td>Empty</td>
-                                    <td>Empty</td>
-                                </tr> : SaleTabel.map((d, i) => (
+                                SaleTabel.map((d, i) => (
                                     <tr key={i}>
                                         <td>{d.REQUEST_ID}</td>
                                         <td>{d.FORM_NAME}</td>

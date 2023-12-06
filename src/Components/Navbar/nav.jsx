@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react';
-import axios from 'axios';
 
 // Translation
 import i18next from "i18next";
@@ -19,7 +18,6 @@ import Logo from '../../Assets/logo.png'
 const Nav = () => {
     const { t } = useTranslation();
     const Navigate = useNavigate();
-    const [loggedOut, setLoggedOut] = useState(false)
     const [Position, setPosition] = useState(localStorage?.lang === "en" ? true : false);
     const decodedToken = localStorage.getItem('token') ? jwtDecode(localStorage.getItem('token')) : '';
     const decodToken = localStorage.getItem('token') && jwtDecode(localStorage.getItem('token'));

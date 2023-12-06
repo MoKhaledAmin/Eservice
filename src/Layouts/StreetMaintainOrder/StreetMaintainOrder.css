@@ -1,4 +1,4 @@
-.lightOrder {
+.StreetMaintainOrder {
     width: 100%;
     height: 100%;
     display: flex;
@@ -8,7 +8,7 @@
     background-color: #f8f8fb;
 }
 
-.lightOrder .formCard {
+.StreetMaintainOrder .formCard {
     width: 68%;
     margin-top: 30px;
     margin: 30px 0 50px 0;
@@ -18,26 +18,26 @@
     box-shadow: 0 0.75rem 1.5rem rgba(18,38,63,.03);
 }
 
-.lightOrder .cardHeader {
+.StreetMaintainOrder .cardHeader {
     width: 100%;
     height: 80px;
     background-color: #e7e9ef;
     padding: 24px;
 }
 
-.lightOrder .cardHeader h3 {
+.StreetMaintainOrder .cardHeader h3 {
     font-size: 25px;
     color: #2b3e4b;
     font-weight: 700;
     margin-bottom: 8px;
 }
 
-.lightOrder .cardBody {
+.StreetMaintainOrder .cardBody {
     width: 100%;
     padding: 0 20px 20px;
 }
 
-.lightOrder .cardBody .mapGoogle {
+.StreetMaintainOrder .cardBody .mapGoogle {
     position: relative;
     padding: 10px;
     display: flex;
@@ -50,22 +50,22 @@
     position: relative !important;
 }
 
-.lightOrder .cardBody .mapContainer {
+.StreetMaintainOrder .cardBody .mapContainer {
     width: 500px !important;
     height: 500px !important;
 }
 
-.lightOrder .cardBody form {
+.StreetMaintainOrder .cardBody form {
     width: 100%;
     padding: 8px;
 }
 
-.lightOrder .cardBody .formSelectList {
+.StreetMaintainOrder .cardBody .formSelectList {
     width: 50%;
     margin-bottom: 16px;
 }
 
-.lightOrder .cardBody .formSelectList label {
+.StreetMaintainOrder .cardBody .formSelectList label {
     font-size: 15px;
     font-weight: 600;
     margin-bottom: 8px;
@@ -73,16 +73,16 @@
     text-transform: capitalize;
 }
 
-.lightOrder .cardBody .formSelectList select {
+.StreetMaintainOrder .cardBody .formSelectList select {
     font-size: 14px;
 }
 
-.lightOrder .cardBody .formSelectList select:focus {
+.StreetMaintainOrder .cardBody .formSelectList select:focus {
     outline: none !important;
     box-shadow: none !important;
 }
 
-.lightOrder .cardBody form button {
+.StreetMaintainOrder .cardBody form button {
     width: 100%;
     padding: 10px;
     font-size: 13px;
@@ -94,16 +94,16 @@
     color: #fff;
 }
 
-.lightOrder .cardBody form button:hover {
+.StreetMaintainOrder .cardBody form button:hover {
     background-color: #22333e;
 }
 
-.lightOrder .formInput {
+.StreetMaintainOrder .formInput {
     width: 100%;
     margin-bottom: 16px;
 }
 
-.lightOrder .formInput label {
+.StreetMaintainOrder .formInput label {
     font-size: 15px;
     font-weight: 600;
     margin-bottom: 8px;
@@ -111,13 +111,13 @@
     text-transform: capitalize;
 }
 
-.lightOrder .formInput input {
+.StreetMaintainOrder .formInput input {
     font-size: 13px;
     padding: 8px 12px;
     line-height: 13px;
 }
 
-.lightOrder .uploadAttach {
+.StreetMaintainOrder .uploadAttach {
     height: 100%;
     width: 100%;
     position: absolute;
@@ -126,7 +126,7 @@
     opacity: 0;
 }
 
-.lightOrder .uploadBtn {
+.StreetMaintainOrder .uploadBtn {
     width: 25%;
     height: 100%;
     padding: 0;
@@ -138,24 +138,24 @@
     justify-content: center;
 }
 
-.lightOrder .uploadBtn button {
+.StreetMaintainOrder .uploadBtn button {
     margin-top: 0 !important;
 }
 
-.lightOrder .imgDisplay {
+.StreetMaintainOrder .imgDisplay {
     display: flex;
     gap: 12px;
 }
 
-.lightOrder .pdfFile {
+.StreetMaintainOrder .pdfFile {
     font-size: 66px;
 }
 
 @media (max-width: 576px) {
-    .lightOrder .formCard {
+    .StreetMaintainOrder .formCard {
         width: 100%;
     }
-    .lightOrder .uploadBtn {
+    .StreetMaintainOrder .uploadBtn {
         width: 41%;
     }
     .map>div {

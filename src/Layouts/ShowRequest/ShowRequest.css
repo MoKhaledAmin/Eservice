@@ -4,6 +4,10 @@
     min-height: 500px;
 }
 
+input[type ="search"]:focus {
+    box-shadow: none ;
+}
+
 @media (max-width: 576px) {
     .dataTable {
         padding: 10px 10px;
