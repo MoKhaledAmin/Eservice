@@ -36,7 +36,6 @@ class MapContainer extends Component {
             component.types.includes("street_number")
           );
 
-          // Concatenate the address name and street name
           const address =
             (addressName ? addressName.long_name : "") +
             " " +
