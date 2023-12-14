@@ -18,6 +18,7 @@ class MapContainer extends Component {
     this.geocodeLatLng(latLng, (address) => {
       // Update the marker position and address in the component state
       this.setState({ markerPosition: latLng, address: address });
+      console.log(address);
     });
   };
 

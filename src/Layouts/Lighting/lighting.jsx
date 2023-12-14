@@ -2,7 +2,7 @@ import React ,{ useEffect } from 'react';
 
 import { PrcServiceDetail } from "../../Services/MasterStore/Reducers/OrderSlice";
 
-
+// Translation
 import { useTranslation } from 'react-i18next';
 
 // Master Hooks
@@ -28,8 +28,6 @@ const Lighting = () => {
     const decodedToken = localStorage.getItem('token') && jwtDecode(localStorage.getItem('token'));
     const state = useAppSelector((state)=> state?.Order?.order);
 
-    
-    console.log(state);
     const CheckLogin = (id) => {
         if(decodedToken){
             Navigate(`/${state?.REF_DESCRIPTION && state?.REF_DESCRIPTION[0]?.PAGE_NAME}/${id}`, { replace: true })
