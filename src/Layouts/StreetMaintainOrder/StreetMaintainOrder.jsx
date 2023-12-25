@@ -58,7 +58,6 @@ const StreetMaintainOrder = () => {
                 let ImageGuidName = AttachmentData && uniqueID() + '.' + AttachmentData[index].file.type.split("/")[1];
                 formData.append("file", AttachmentData[index].file);
                 formData.append("FilePath", ImageGuidName);
-                console.log(AttachmentData[index].file);
                 const Data = {
                     DISPLAY_NAME: AttachmentData[index].file.name,
                     EXTENSION_NAME: AttachmentData[index].file.type?.split("/")[1],
@@ -66,8 +65,6 @@ const StreetMaintainOrder = () => {
                     FILESIZE: AttachmentData[index].file.size,
                     STREET_MAINTENANT_ID: res.payload.DATA.DSTREET_MAINTENANT_ID
                 }
-                console.log(Data);
-                console.log(res.payload);
                 dispatch(InsertAttachment(Data));
                 dispatch(UploadAttach(formData));
             }

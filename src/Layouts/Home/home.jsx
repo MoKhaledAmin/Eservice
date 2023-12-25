@@ -17,22 +17,22 @@ const Home = () => {
                 <Carousel.Item>
                     <img className="w-100 d-block" src={slide1} alt="Slide 1" />
                     <div className="carousel-caption d-none d-md-block">
-                        <h5>Mohamed Khaled</h5>
-                        <p>Mohamed</p>
+                        <h5>Akwad Arabia</h5>
+                        <p>Akwad</p>
                     </div>
                 </Carousel.Item>
                 <Carousel.Item>
                     <img className="w-100 d-block" src={slide2} alt="Slide 2" />
                     <div className="carousel-caption d-none d-md-block">
-                        <h5>Mohamed Khaled</h5>
-                        <p>Mohamed</p>
+                        <h5>Akwad Arabia</h5>
+                        <p>Akwad</p>
                     </div>
                 </Carousel.Item>
                 <Carousel.Item>
                     <img className="w-100 d-block" src={slide1} alt="Slide 3" />
                     <div className="carousel-caption d-none d-md-block">
-                        <h5>Mohamed Khaled</h5>
-                        <p>Mohamed</p>
+                        <h5>Akwad Arabia</h5>
+                        <p>Akwad</p>
                     </div>
                 </Carousel.Item>
             </Carousel>

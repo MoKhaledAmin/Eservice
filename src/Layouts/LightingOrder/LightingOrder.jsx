@@ -11,7 +11,7 @@ import { useAppDispatch, useAppSelector } from "../../Services/MasterStore/Maste
 import { useForm } from "react-hook-form";
 
 // Map
-import MapContainer from './Map';
+import Map from './Map';
 
 // Error Message
 import { ErrorMessage } from "@hookform/error-message"
@@ -46,7 +46,7 @@ const LightingOrder = () => {
     const street = useAppSelector((street) => street.Start.Street);
     const displayAttach = useAppSelector((display) => display.Start.DisplayAttach.NSERVICE);
 
-    
+
     const uniqueID = () => {
         function chr4() {
             return Math.random().toString(16).slice(-4);
@@ -104,7 +104,7 @@ const LightingOrder = () => {
                     </div>
                     <div className="cardBody">
                         <div className="mapGoogle">
-                            <MapContainer />
+                            <Map />
                         </div>
                         <form onSubmit={handleSubmit((data) => onSubmit(data))}>
                             <div className="container">
@@ -117,7 +117,7 @@ const LightingOrder = () => {
                                                     <option key={idx} value={Number(item.CLIENT_ID)}>{item.CLIENT_NAME}</option>
                                                 ))
                                             }
-                                            
+
                                         </select>
                                         <small><ErrorMessage errors={errors} name="CLIENT_ID" /></small>
                                     </div>

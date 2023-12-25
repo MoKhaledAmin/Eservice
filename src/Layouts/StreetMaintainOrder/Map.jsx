@@ -1,81 +1,52 @@
-import React, { Component } from "react";
-import { Map, GoogleApiWrapper, Marker } from "google-maps-react";
+import React, { useEffect, useRef } from 'react';
 
-class MapContainer extends Component {
-  state = {
-    markerPosition: null,
-    address: null
-  };
-
-  handleClick = (mapProps, map, clickEvent) => {
-    const { latLng } = clickEvent;
-    const latitude = latLng.lat();
-    const longitude = latLng.lng();
-    localStorage.setItem("latitude", latitude);
-    localStorage.setItem("longitude", longitude);
-
-    // Call the geocodeLatLng function with the clicked coordinates
-    this.geocodeLatLng(latLng, (address) => {
-      // Update the marker position and address in the component state
-      this.setState({ markerPosition: latLng, address: address });
-      console.log(address);
-    });
-  };
-
-  geocodeLatLng = (latLng, callback) => {
-    const geocoder = new this.props.google.maps.Geocoder();
-    geocoder.geocode({ location: latLng }, (results, status) => {
-      if (status === "OK") {
-        if (results[0]) {
-          // Extract the address components
-          const addressComponents = results[0].address_components;
-          // Find the address name and street name components
-          const addressName = addressComponents.find(component =>
-            component.types.includes("route")
-          );
-          const streetName = addressComponents.find(component =>
-            component.types.includes("street_number")
-          );
-
-          const address =
-            (addressName ? addressName.long_name : "") +
-            " " +
-            (streetName ? streetName.long_name : "");
-
-          callback(address);
-        } else {
-          callback("No results found");
-        }
-      } else {
-        callback("Geocoder failed due to: " + status);
-      }
-    });
-  };
-
-  render() {
-    const mapStyles = {
-      width: "1205px",
-      height: "500px",
-      position: "relative"
+const MapComponent = () => {
+  const mapRef = useRef(null);
+  const loadMap = () => {
+    const mapOptions = { // Replace with your Bing Maps API Key
     };
+    const map = new window.Microsoft.Maps.Map(mapRef.current, mapOptions);
+   let singleMarker=null;
+    // Load the DrawingTools module
+    window.Microsoft.Maps.loadModule('Microsoft.Maps.DrawingTools', () => {
+      const tools = new window.Microsoft.Maps.DrawingTools(map);
+      tools.showDrawingManager((manager) => {
+        // Add a click event listener to the map
+        window.Microsoft.Maps.Events.addHandler(map, 'click', (e) => {
+          // Store the latitude and longitude of the clicked location
+          const clickedLocation = {
+            latitude: e.location.latitude,
+            longitude: e.location.longitude,
+          };
+          // Remove existing marker if present
+          if (singleMarker) {
+            map.entities.remove(singleMarker);
+          }
 
-    return (
-      <Map
-        google={this.props.google}
-        zoom={14}
-        style={mapStyles}
-        initialCenter={{ lat: 37.7749, lng: -122.4194 }}
-        onClick={this.handleClick}
-        className="map"
-      >
-        {this.state.markerPosition && (
-          <Marker position={this.state.markerPosition} title={this.state.address} />
-        )}
-      </Map>
-    );
-  }
-}
+          // Create a marker at the clicked location
+          const newMarker = new window.Microsoft.Maps.Pushpin(
+            new window.Microsoft.Maps.Location(
+              clickedLocation.latitude,
+              clickedLocation.longitude
+            )
+          );
+          // Add the marker to the map
+          map.entities.push(newMarker);
+          singleMarker=newMarker;
 
-export default GoogleApiWrapper({
-  apiKey: "AIzaSyCr-NNkiB1f6x1nMU1wDe6cGrvlO09jeIo",
-})(MapContainer);
+          // Log the last clicked location to localStorage
+          localStorage.setItem('latitude', clickedLocation.latitude);
+          localStorage.setItem('longitude', clickedLocation.longitude);
+        });
+      });
+    });
+  };
+
+  useEffect(() => {
+    loadMap();
+  }, []);
+
+  return <div id="myMap" style={{ width: '100%', height: '500px' }} ref={mapRef} />;
+};
+
+export default MapComponent;
